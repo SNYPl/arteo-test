@@ -1,0 +1,67 @@
+.date {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.dateInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.dateInfo h4 {
+  color: #2a3342;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22.68px;
+  margin-bottom: 4px;
+  animation: fadeRight 1s ease-out;
+}
+
+@keyframes fadeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.dateInfo p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20.68px;
+  color: rgba(42, 51, 66, 1);
+  animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.calendarIcon {
+  animation: pulse 0.5s ease-in-out 1s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

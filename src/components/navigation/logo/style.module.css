@@ -1,0 +1,64 @@
+.logo {
+  display: flex;
+  animation: fadeInSlideUp 1s ease-out forwards;
+}
+
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logoContainer {
+  animation: logoFadeIn 1s ease-out 1s forwards;
+  margin-right: 16px;
+}
+
+@keyframes logoFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.logoTitle {
+  display: flex;
+  flex-direction: column;
+  animation: titleFadeIn 1s ease-out 1.5s forwards;
+}
+
+@keyframes titleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.logoTitle h2 {
+  letter-spacing: 1px;
+}
+
+.logoTitle span,
+.logoTitle h2 {
+  font-size: 24px;
+  line-height: 27.6px;
+  font-weight: 400;
+  color: rgba(42, 51, 66, 1);
+}
+
+.logoTitle span {
+  font-weight: 800;
+}

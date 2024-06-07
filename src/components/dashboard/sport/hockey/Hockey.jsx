@@ -2,6 +2,8 @@ import React from "react";
 import style from "./style.module.css";
 
 const Hockey = ({ data }) => {
+  if (!data) return null;
+
   return (
     <article className={style.sport}>
       <div className={style.title}>
@@ -9,8 +11,8 @@ const Hockey = ({ data }) => {
       </div>
       <div className={style.gradient}></div>
       <div className={style.info}>
-        <Group title={data.group1.title} teams={data.group1.teams} />
-        <Group title={data.group2.title} teams={data.group2.teams} />
+        <Group title={data.group1.title} teams={data?.group1?.teams} />
+        <Group title={data.group2.title} teams={data?.group2?.teams} />
       </div>
     </article>
   );
@@ -29,6 +31,8 @@ const Group = ({ title, teams }) => (
     {teams?.map((player, index) => {
       const { team1, team2 } = player;
 
+      if (!team1 && !team2) return null;
+
       return (
         <article className={`${style.playerInfo}`} key={index}>
           <TeamList team={team1} index={index} />
@@ -40,6 +44,8 @@ const Group = ({ title, teams }) => (
 );
 
 const TeamList = ({ team }) => {
+  if (!team) return null;
+
   return (
     <div className={style.player}>
       {team?.map((el, id) => {

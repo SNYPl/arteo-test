@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import style from "./style.module.css";
 
 const Hockey = ({ data }) => {
-  const [teams, setTeams] = useState(data);
-
   return (
     <article className={style.sport}>
       <div className={style.title}>
-        <h2>{teams.title}</h2>
+        <h2>{data.title}</h2>
       </div>
       <div className={style.gradient}></div>
       <div className={style.info}>
-        <Group title={data.group1.title} teams={teams.group1.teams} />
-        <Group title={data.group2.title} teams={teams.group2.teams} />
+        <Group title={data.group1.title} teams={data.group1.teams} />
+        <Group title={data.group2.title} teams={data.group2.teams} />
       </div>
     </article>
   );

@@ -116,20 +116,23 @@ const Sport = ({ data, gradient }) => {
             </span>
             <span className={style.line}></span>
           </p>
-
-          <article className={style.playerInfo}>
-            <div className={style.player}>
-              <div className={style.flag}>
-                <span>1.</span>
-                {/* <PL /> */}
-              </div>
-              <div className={style.flagTitle}>
-                <p>(SLO)</p>
-              </div>
-              <h3 className={style.playerName}>L. Repinc</h3>
-            </div>
-            <p className={style.scoreInfo}>31:34.07</p>
-          </article>
+          {teams.group2.teams.map((player, index) => {
+            return (
+              <article className={style.playerInfo} key={index}>
+                <div className={style.player}>
+                  <div className={style.flag}>
+                    <span>{index + 1}.</span>
+                    {player.flag}
+                  </div>
+                  <div className={style.flagTitle}>
+                    <p>({player.flagTitle})</p>
+                  </div>
+                  <h3 className={style.playerName}>{player.player}</h3>
+                </div>
+                <p className={style.scoreInfo}>{player.time}</p>
+              </article>
+            );
+          })}
         </div>
       </div>
     </article>
